@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body style="background-color:lightsteelblue;">
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Biodiversity</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#bubble">Bubble</a></li>
+      <li><a href="#bar">Bar</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style="background-image: url(https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); background-size: 100%;">
+        <h1 style = "color: rgb(207, 67, 12)"> Belly Button Biodiversity Dashboard</h1>
+        <p style = "color:orangered">Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class = "row">
+      <div class="col-md-12">
+        <p style = "color:chocolate; background-color: white; font-size: small";>In this webpage, you will enjoy a fast access to a visualized representation of a large set of data. On the left hand side of the below section, you can input the ID No and the webpage will give you all the corresponding information related to this ID No. On the right hand side, there is top 10 sample value of the bacteria found in this ID No. In the middle of the webpage, there is a washing frequency indicator that will show you the number of washing frequency of this ID. On the bottom of this webpage, you will see a visualized bubble chart that show you all the sample value and its UID </p>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <p>Input the ID No you want to check</p>
+        <div></div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div id="bar"></div>
+        <p style="color:rgb(207, 67, 12); background-color: white; font-size:small";>This bar chart will show you the top 10 uid and their values that are assocaitd with this ID No</p>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div id="gauge"></div>
+      <p style="background-color:white; color:rgb(207, 67, 12); font-size: small";>This Gauge table will show you the number of washing frequency that this ID No is associated with. If the frequency is very low, the indicator will point to the section that is closer to red. If the frequency is high, the indicator will point to the section that is closer green</p>
+    </div>
+    
+    
+    <div class="row">
+      <div class="col-md-8">
+        <div id="bubble"></div>
+        <p style="background-color: white;color:rgb(207, 67, 12); font-size: small";>In this bubble chart, you will see all the sample values that are corresponding to this ID No are all presented in a fun, bubble-sized dot. This chart includes all the sample value, unlike the bar chart, which only contains the top 10 values</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
